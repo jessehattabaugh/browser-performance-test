@@ -27,7 +27,8 @@ const OUTPUT_HTML = 'results_chart.html';
 // Helper → average of numeric array
 const avg = (arr) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null);
 
-(async () => {
+// Main benchmark function - only run if this file is executed directly
+async function runBenchmark() {
 	const results = {};
 	const browsers = {
 		Chrome: {
@@ -112,7 +113,25 @@ const avg = (arr) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length :
 	const chartHtml = generateHtml(results);
 	fs.writeFileSync(OUTPUT_HTML, chartHtml);
 	console.log(`Dashboard written to ${OUTPUT_HTML} (open it in a browser)\n`);
-})();
+}
+
+// Only run benchmark if this file is executed directly
+if (require.main === module) {
+	runBenchmark().catch(console.error);
+}
+
+// Export functions for testing
+module.exports = {
+	generateHtml,
+	calculateMetricsData,
+	calculateCumulativeStats,
+	calculateDeltas,
+	avg,
+	ITERATIONS,
+	URLS,
+	OUTPUT_JSON,
+	OUTPUT_HTML
+};
 
 // ----------------------------------------------------------------
 //  create enhanced HTML file with embedded Chart.js bar charts
