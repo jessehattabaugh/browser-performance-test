@@ -1,0 +1,25 @@
+{
+	"name": "browser-performance-test",
+	"version": "1.0.0",
+	"description": "a script to test the loading performance of several urls in several browsers with and without javascript and cache",
+	"homepage": "https://github.com/jessehattabaugh/browser-performance-test#readme",
+	"bugs": {
+		"url": "https://github.com/jessehattabaugh/browser-performance-test/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jessehattabaugh/browser-performance-test.git"
+	},
+	"license": "MIT",
+	"author": "Jesse Hattabaugh <webmaster@jessehattabaugh.com>",
+	"type": "commonjs",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"postinstall": "npx playwright install",
+		"start": "node ./"
+	},
+	"dependencies": {
+		"playwright": "^1.54.1"
+	}
+}

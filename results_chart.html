@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Firefox vs Chrome – FCP Benchmark</title>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<style>
+			body{font-family:system-ui,Arial,sans-serif;margin:2rem;background:#f5f7fa;color:#111}
+			canvas{max-width:100%;height:400px;margin-bottom:50px}
+		</style>
+	</head>
+	<body>
+		<h1>First Contentful Paint (average of 5 runs, ms)</h1>
+
+		<h2>Cold Cache</h2>
+		<canvas id="coldChart"></canvas>
+
+		<h2>Warm Cache</h2>
+		<canvas id="warmChart"></canvas>
+
+		<script>
+			const coldCtx = document.getElementById('coldChart').getContext('2d');
+			const warmCtx = document.getElementById('warmChart').getContext('2d');
+			new Chart(coldCtx, {
+				type: 'bar',
+				data: {
+					labels: ["Chrome JS_on https://youtube.com/","Chrome JS_on https://github.com/","Chrome JS_on https://stackoverflow.com/","Chrome JS_on https://developer.mozilla.org/","Chrome JS_off https://youtube.com/","Chrome JS_off https://github.com/","Chrome JS_off https://stackoverflow.com/","Chrome JS_off https://developer.mozilla.org/","Firefox JS_on https://youtube.com/","Firefox JS_on https://github.com/","Firefox JS_on https://stackoverflow.com/","Firefox JS_on https://developer.mozilla.org/","Firefox JS_off https://youtube.com/","Firefox JS_off https://github.com/","Firefox JS_off https://stackoverflow.com/","Firefox JS_off https://developer.mozilla.org/"],
+					datasets: [{label: 'FCP (ms)', data: [738.4,674.4,978.4,591.2,670.4,672.8,null,null,1531.8,996.6,1113.8,648.2,1191.8,699.8,747,564.2]}]
+				},
+				options: {responsive:true, indexAxis:'y', scales:{x:{beginAtZero:true}}}
+			});
+			new Chart(warmCtx, {
+				type: 'bar',
+				data: {
+					labels: ["Chrome JS_on https://youtube.com/","Chrome JS_on https://github.com/","Chrome JS_on https://stackoverflow.com/","Chrome JS_on https://developer.mozilla.org/","Chrome JS_off https://youtube.com/","Chrome JS_off https://github.com/","Chrome JS_off https://stackoverflow.com/","Chrome JS_off https://developer.mozilla.org/","Firefox JS_on https://youtube.com/","Firefox JS_on https://github.com/","Firefox JS_on https://stackoverflow.com/","Firefox JS_on https://developer.mozilla.org/","Firefox JS_off https://youtube.com/","Firefox JS_off https://github.com/","Firefox JS_off https://stackoverflow.com/","Firefox JS_off https://developer.mozilla.org/"],
+					datasets: [{label: 'FCP (ms)', data: [352.8,538,179.2,111.2,352,null,155.2,null,null,148,191.2,41.6,351.5,286,303.2,132]}]
+				},
+				options: {responsive:true, indexAxis:'y', scales:{x:{beginAtZero:true}}}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,1150 @@
+{
+  "Chrome": {
+    "JS_on": {
+      "https://youtube.com/": {
+        "cold": [
+          {
+            "browser_start_time": 270,
+            "fcp": 796,
+            "dom_interactive": 1563.2999999523163,
+            "dom_content_loaded": 1564.0999999642372,
+            "load": 1923.5
+          },
+          {
+            "browser_start_time": 150,
+            "fcp": 680,
+            "dom_interactive": 1413.1000000238419,
+            "dom_content_loaded": 1413.699999988079,
+            "load": 1885.800000011921
+          },
+          {
+            "browser_start_time": 138,
+            "fcp": 760,
+            "dom_interactive": 1494.5999999642372,
+            "dom_content_loaded": 1495.300000011921,
+            "load": 1796.800000011921
+          },
+          {
+            "browser_start_time": 143,
+            "fcp": 720,
+            "dom_interactive": 1459.1000000238419,
+            "dom_content_loaded": 1459.8999999761581,
+            "load": 1885.800000011921
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 736,
+            "dom_interactive": 1460,
+            "dom_content_loaded": 1460.699999988079,
+            "load": 1910.5999999642372
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 388,
+            "dom_interactive": 1155.300000011921,
+            "dom_content_loaded": 1167.199999988079,
+            "load": 1174.800000011921
+          },
+          {
+            "fcp": 372,
+            "dom_interactive": 1069.300000011921,
+            "dom_content_loaded": 1081.199999988079,
+            "load": 1099.199999988079
+          },
+          {
+            "fcp": 312,
+            "dom_interactive": 999.8999999761581,
+            "dom_content_loaded": 1012,
+            "load": 1023.5999999642372
+          },
+          {
+            "fcp": 364,
+            "dom_interactive": 1076.6000000238419,
+            "dom_content_loaded": 1088.6000000238419,
+            "load": 1101.6000000238419
+          },
+          {
+            "fcp": 328,
+            "dom_interactive": 1022.6999999880791,
+            "dom_content_loaded": 1035.0999999642372,
+            "load": 1045.699999988079
+          }
+        ]
+      },
+      "https://github.com/": {
+        "cold": [
+          {
+            "browser_start_time": 270,
+            "fcp": 796,
+            "dom_interactive": 635.4000000357628,
+            "dom_content_loaded": 931.6000000238419,
+            "load": 1257.5
+          },
+          {
+            "browser_start_time": 150,
+            "fcp": 676,
+            "dom_interactive": 514.1999999880791,
+            "dom_content_loaded": 799.8000000119209,
+            "load": 1143.3999999761581
+          },
+          {
+            "browser_start_time": 138,
+            "fcp": 608,
+            "dom_interactive": 453.5,
+            "dom_content_loaded": 743,
+            "load": 1074
+          },
+          {
+            "browser_start_time": 143,
+            "fcp": 652,
+            "dom_interactive": 467.5,
+            "dom_content_loaded": 781.6999999880791,
+            "load": 1143.300000011921
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 640,
+            "dom_interactive": 489.80000001192093,
+            "dom_content_loaded": 785.1000000238419,
+            "load": 1114
+          }
+        ],
+        "warm": [
+          {
+            "fcp": null,
+            "dom_interactive": 477.7999999523163,
+            "dom_content_loaded": 578.7999999523163,
+            "load": 598.6999999880791
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 408.4000000357628,
+            "dom_content_loaded": 508.10000002384186,
+            "load": 526
+          },
+          {
+            "fcp": 552,
+            "dom_interactive": 396,
+            "dom_content_loaded": 493.69999998807907,
+            "load": 587.4000000357628
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 391.10000002384186,
+            "dom_content_loaded": 485,
+            "load": 503
+          },
+          {
+            "fcp": 524,
+            "dom_interactive": 390.69999998807907,
+            "dom_content_loaded": 485.89999997615814,
+            "load": 582.1999999880791
+          }
+        ]
+      },
+      "https://stackoverflow.com/": {
+        "cold": [
+          {
+            "browser_start_time": 270,
+            "fcp": 1108,
+            "dom_interactive": 1067,
+            "dom_content_loaded": 1155.7999999523163,
+            "load": 1463.3999999761581
+          },
+          {
+            "browser_start_time": 150,
+            "fcp": 860,
+            "dom_interactive": 839.7000000476837,
+            "dom_content_loaded": 923.5,
+            "load": 1251.300000011921
+          },
+          {
+            "browser_start_time": 138,
+            "fcp": 1080,
+            "dom_interactive": 1054.199999988079,
+            "dom_content_loaded": 1140.5,
+            "load": 1453.5
+          },
+          {
+            "browser_start_time": 143,
+            "fcp": 936,
+            "dom_interactive": 910.5999999642372,
+            "dom_content_loaded": 995,
+            "load": 1279.699999988079
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 908,
+            "dom_interactive": 879.6999999880791,
+            "dom_content_loaded": 966.6999999880791,
+            "load": 1273.199999988079
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 148,
+            "dom_interactive": 199.29999995231628,
+            "dom_content_loaded": 246.5,
+            "load": 318.19999998807907
+          },
+          {
+            "fcp": 176,
+            "dom_interactive": 223.0999999642372,
+            "dom_content_loaded": 276,
+            "load": 358
+          },
+          {
+            "fcp": 200,
+            "dom_interactive": 246.19999998807907,
+            "dom_content_loaded": 295.69999998807907,
+            "load": 371.2999999523163
+          },
+          {
+            "fcp": 180,
+            "dom_interactive": 226.0999999642372,
+            "dom_content_loaded": 278.5999999642372,
+            "load": 354.69999998807907
+          },
+          {
+            "fcp": 192,
+            "dom_interactive": 180,
+            "dom_content_loaded": 251.4000000357628,
+            "load": 323.9000000357628
+          }
+        ]
+      },
+      "https://developer.mozilla.org/": {
+        "cold": [
+          {
+            "browser_start_time": 270,
+            "fcp": 828,
+            "dom_interactive": 593.3999999761581,
+            "dom_content_loaded": 828.8999999761581,
+            "load": 899
+          },
+          {
+            "browser_start_time": 150,
+            "fcp": 536,
+            "dom_interactive": 311.19999998807907,
+            "dom_content_loaded": 538.1000000238419,
+            "load": 596.8999999761581
+          },
+          {
+            "browser_start_time": 138,
+            "fcp": 524,
+            "dom_interactive": 294.19999998807907,
+            "dom_content_loaded": 521.6000000238419,
+            "load": 588.6000000238419
+          },
+          {
+            "browser_start_time": 143,
+            "fcp": 516,
+            "dom_interactive": 286.39999997615814,
+            "dom_content_loaded": 515.7999999523163,
+            "load": 576.0999999642372
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 552,
+            "dom_interactive": 318.5,
+            "dom_content_loaded": 555.9000000357628,
+            "load": 613.1000000238419
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 120,
+            "dom_interactive": 77.5,
+            "dom_content_loaded": 91.19999998807907,
+            "load": 142.9000000357628
+          },
+          {
+            "fcp": 116,
+            "dom_interactive": 79.69999998807907,
+            "dom_content_loaded": 92.19999998807907,
+            "load": 151.5
+          },
+          {
+            "fcp": 108,
+            "dom_interactive": 66.80000001192093,
+            "dom_content_loaded": 78.5,
+            "load": 139.70000004768372
+          },
+          {
+            "fcp": 96,
+            "dom_interactive": 52.69999998807907,
+            "dom_content_loaded": 65.30000001192093,
+            "load": 122.69999998807907
+          },
+          {
+            "fcp": 116,
+            "dom_interactive": 70.5,
+            "dom_content_loaded": 83.09999996423721,
+            "load": 144.5999999642372
+          }
+        ]
+      }
+    },
+    "JS_off": {
+      "https://youtube.com/": {
+        "cold": [
+          {
+            "browser_start_time": 133,
+            "fcp": 712,
+            "dom_interactive": 701.5999999642372,
+            "dom_content_loaded": 701.5999999642372,
+            "load": 1054.3999999761581
+          },
+          {
+            "browser_start_time": 134,
+            "fcp": 700,
+            "dom_interactive": 686.3999999761581,
+            "dom_content_loaded": 686.3999999761581,
+            "load": 951.8000000119209
+          },
+          {
+            "browser_start_time": 137,
+            "fcp": 592,
+            "dom_interactive": 621.3999999761581,
+            "dom_content_loaded": 621.5,
+            "load": 1073.199999988079
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 684,
+            "dom_interactive": 673.1000000238419,
+            "dom_content_loaded": 673.2000000476837,
+            "load": 975
+          },
+          {
+            "browser_start_time": 135,
+            "fcp": 664,
+            "dom_interactive": 652.2000000476837,
+            "dom_content_loaded": 652.3000000119209,
+            "load": 994.9000000357628
+          }
+        ],
+        "warm": [
+          {
+            "fcp": null,
+            "dom_interactive": 298.5,
+            "dom_content_loaded": 298.5999999642372,
+            "load": 300
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 280,
+            "dom_content_loaded": 280,
+            "load": 280.7000000476837
+          },
+          {
+            "fcp": 352,
+            "dom_interactive": 358.69999998807907,
+            "dom_content_loaded": 358.69999998807907,
+            "load": 359
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 293.69999998807907,
+            "dom_content_loaded": 293.9000000357628,
+            "load": 295.19999998807907
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 393.80000001192093,
+            "dom_content_loaded": 393.89999997615814,
+            "load": 394.30000001192093
+          }
+        ]
+      },
+      "https://github.com/": {
+        "cold": [
+          {
+            "browser_start_time": 133,
+            "fcp": 696,
+            "dom_interactive": 509.89999997615814,
+            "dom_content_loaded": 509.89999997615814,
+            "load": 955.5
+          },
+          {
+            "browser_start_time": 134,
+            "fcp": 624,
+            "dom_interactive": 437.19999998807907,
+            "dom_content_loaded": 437.19999998807907,
+            "load": 853.6999999880791
+          },
+          {
+            "browser_start_time": 137,
+            "fcp": 696,
+            "dom_interactive": 503.5,
+            "dom_content_loaded": 503.5999999642372,
+            "load": 987.2999999523163
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": 668,
+            "dom_interactive": 488.4000000357628,
+            "dom_content_loaded": 488.5,
+            "load": 951.1999999880791
+          },
+          {
+            "browser_start_time": 135,
+            "fcp": 680,
+            "dom_interactive": 479.60000002384186,
+            "dom_content_loaded": 479.60000002384186,
+            "load": 872.9000000357628
+          }
+        ],
+        "warm": [
+          {
+            "fcp": null,
+            "dom_interactive": 79.70000004768372,
+            "dom_content_loaded": 80.40000003576279,
+            "load": 118.80000001192093
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 126.60000002384186,
+            "dom_content_loaded": 126.70000004768372,
+            "load": 128.5
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 74.10000002384186,
+            "dom_content_loaded": 74.89999997615814,
+            "load": 115.10000002384186
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 83.40000003576279,
+            "dom_content_loaded": 84.20000004768372,
+            "load": 123.90000003576279
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 98.80000001192093,
+            "dom_content_loaded": 99.60000002384186,
+            "load": 138.39999997615814
+          }
+        ]
+      },
+      "https://stackoverflow.com/": {
+        "cold": [
+          {
+            "browser_start_time": 133,
+            "fcp": null,
+            "dom_interactive": 458.7000000476837,
+            "dom_content_loaded": 458.7000000476837,
+            "load": 741.2000000476837
+          },
+          {
+            "browser_start_time": 134,
+            "fcp": null,
+            "dom_interactive": 591.5,
+            "dom_content_loaded": 591.5,
+            "load": 907.6999999880791
+          },
+          {
+            "browser_start_time": 137,
+            "fcp": null,
+            "dom_interactive": 410.7999999523163,
+            "dom_content_loaded": 410.7999999523163,
+            "load": 680.5
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": null,
+            "dom_interactive": 413.80000001192093,
+            "dom_content_loaded": 413.80000001192093,
+            "load": 821.6999999880791
+          },
+          {
+            "browser_start_time": 135,
+            "fcp": null,
+            "dom_interactive": 392.5,
+            "dom_content_loaded": 392.5,
+            "load": 649.6000000238419
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 136,
+            "dom_interactive": 189.10000002384186,
+            "dom_content_loaded": 189.10000002384186,
+            "load": 253.69999998807907
+          },
+          {
+            "fcp": 172,
+            "dom_interactive": 225.29999995231628,
+            "dom_content_loaded": 225.29999995231628,
+            "load": 307.5999999642372
+          },
+          {
+            "fcp": 148,
+            "dom_interactive": 201.5999999642372,
+            "dom_content_loaded": 201.5999999642372,
+            "load": 312.0999999642372
+          },
+          {
+            "fcp": 160,
+            "dom_interactive": 208.19999998807907,
+            "dom_content_loaded": 208.19999998807907,
+            "load": 336.5999999642372
+          },
+          {
+            "fcp": 160,
+            "dom_interactive": 179,
+            "dom_content_loaded": 179.30000001192093,
+            "load": 270.4000000357628
+          }
+        ]
+      },
+      "https://developer.mozilla.org/": {
+        "cold": [
+          {
+            "browser_start_time": 133,
+            "fcp": null,
+            "dom_interactive": 313.39999997615814,
+            "dom_content_loaded": 313.39999997615814,
+            "load": 571.1999999880791
+          },
+          {
+            "browser_start_time": 134,
+            "fcp": null,
+            "dom_interactive": 365.30000001192093,
+            "dom_content_loaded": 365.30000001192093,
+            "load": 633
+          },
+          {
+            "browser_start_time": 137,
+            "fcp": null,
+            "dom_interactive": 303,
+            "dom_content_loaded": 303,
+            "load": 595.1999999880791
+          },
+          {
+            "browser_start_time": 140,
+            "fcp": null,
+            "dom_interactive": 304.60000002384186,
+            "dom_content_loaded": 304.69999998807907,
+            "load": 569.6000000238419
+          },
+          {
+            "browser_start_time": 135,
+            "fcp": null,
+            "dom_interactive": 233.5,
+            "dom_content_loaded": 233.5,
+            "load": 482.4000000357628
+          }
+        ],
+        "warm": [
+          {
+            "fcp": null,
+            "dom_interactive": 120.19999998807907,
+            "dom_content_loaded": 120.19999998807907,
+            "load": 128.69999998807907
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 77.39999997615814,
+            "dom_content_loaded": 77.5,
+            "load": 86
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 128.80000001192093,
+            "dom_content_loaded": 128.89999997615814,
+            "load": 136.89999997615814
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 64.59999996423721,
+            "dom_content_loaded": 64.69999998807907,
+            "load": 73.30000001192093
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 65.5,
+            "dom_content_loaded": 65.59999996423721,
+            "load": 73.89999997615814
+          }
+        ]
+      }
+    }
+  },
+  "Firefox": {
+    "JS_on": {
+      "https://youtube.com/": {
+        "cold": [
+          {
+            "browser_start_time": 589,
+            "fcp": 1019,
+            "dom_interactive": 2376,
+            "dom_content_loaded": 2393,
+            "load": 2756
+          },
+          {
+            "browser_start_time": 406,
+            "fcp": 888,
+            "dom_interactive": 2266,
+            "dom_content_loaded": 2283,
+            "load": 2657
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 2487,
+            "dom_interactive": 2212,
+            "dom_content_loaded": 2239,
+            "load": 2555
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 884,
+            "dom_interactive": 2195,
+            "dom_content_loaded": 2228,
+            "load": 2495
+          },
+          {
+            "browser_start_time": 399,
+            "fcp": 2381,
+            "dom_interactive": 2166,
+            "dom_content_loaded": 2194,
+            "load": 2517
+          }
+        ],
+        "warm": [
+          {
+            "fcp": null,
+            "dom_interactive": 1566,
+            "dom_content_loaded": 1577,
+            "load": 1603
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 1507,
+            "dom_content_loaded": 1517,
+            "load": 1542
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 1465,
+            "dom_content_loaded": 1477,
+            "load": 1501
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 1441,
+            "dom_content_loaded": 1453,
+            "load": 1476
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 1532,
+            "dom_content_loaded": 1543,
+            "load": 1573
+          }
+        ]
+      },
+      "https://github.com/": {
+        "cold": [
+          {
+            "browser_start_time": 589,
+            "fcp": 1002,
+            "dom_interactive": 844,
+            "dom_content_loaded": 1040,
+            "load": 1338
+          },
+          {
+            "browser_start_time": 406,
+            "fcp": 962,
+            "dom_interactive": 885,
+            "dom_content_loaded": 1119,
+            "load": 1354
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 1097,
+            "dom_interactive": 924,
+            "dom_content_loaded": 1104,
+            "load": 1494
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 1039,
+            "dom_interactive": 856,
+            "dom_content_loaded": 1048,
+            "load": 1290
+          },
+          {
+            "browser_start_time": 399,
+            "fcp": 883,
+            "dom_interactive": 830,
+            "dom_content_loaded": 1045,
+            "load": 1307
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 151,
+            "dom_interactive": 117,
+            "dom_content_loaded": 347,
+            "load": 497
+          },
+          {
+            "fcp": 143,
+            "dom_interactive": 109,
+            "dom_content_loaded": 327,
+            "load": 467
+          },
+          {
+            "fcp": 146,
+            "dom_interactive": 114,
+            "dom_content_loaded": 325,
+            "load": 470
+          },
+          {
+            "fcp": 152,
+            "dom_interactive": 119,
+            "dom_content_loaded": 328,
+            "load": 492
+          },
+          {
+            "fcp": 148,
+            "dom_interactive": 113,
+            "dom_content_loaded": 328,
+            "load": 473
+          }
+        ]
+      },
+      "https://stackoverflow.com/": {
+        "cold": [
+          {
+            "browser_start_time": 589,
+            "fcp": 1044,
+            "dom_interactive": 1007,
+            "dom_content_loaded": 1155,
+            "load": 1705
+          },
+          {
+            "browser_start_time": 406,
+            "fcp": 1066,
+            "dom_interactive": 998,
+            "dom_content_loaded": 1157,
+            "load": 1670
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 1131,
+            "dom_interactive": 1099,
+            "dom_content_loaded": 1224,
+            "load": 1696
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 1114,
+            "dom_interactive": 1084,
+            "dom_content_loaded": 1235,
+            "load": 1720
+          },
+          {
+            "browser_start_time": 399,
+            "fcp": 1214,
+            "dom_interactive": 1166,
+            "dom_content_loaded": 1311,
+            "load": 2383
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 216,
+            "dom_interactive": 255,
+            "dom_content_loaded": 332,
+            "load": 351
+          },
+          {
+            "fcp": 198,
+            "dom_interactive": 240,
+            "dom_content_loaded": 313,
+            "load": 377
+          },
+          {
+            "fcp": 170,
+            "dom_interactive": 214,
+            "dom_content_loaded": 285,
+            "load": 353
+          },
+          {
+            "fcp": 185,
+            "dom_interactive": 229,
+            "dom_content_loaded": 304,
+            "load": 322
+          },
+          {
+            "fcp": 187,
+            "dom_interactive": 237,
+            "dom_content_loaded": 310,
+            "load": 376
+          }
+        ]
+      },
+      "https://developer.mozilla.org/": {
+        "cold": [
+          {
+            "browser_start_time": 589,
+            "fcp": 702,
+            "dom_interactive": 676,
+            "dom_content_loaded": 827,
+            "load": 883
+          },
+          {
+            "browser_start_time": 406,
+            "fcp": 648,
+            "dom_interactive": 615,
+            "dom_content_loaded": 666,
+            "load": 719
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 619,
+            "dom_interactive": 602,
+            "dom_content_loaded": 714,
+            "load": 746
+          },
+          {
+            "browser_start_time": 405,
+            "fcp": 647,
+            "dom_interactive": 630,
+            "dom_content_loaded": 732,
+            "load": 796
+          },
+          {
+            "browser_start_time": 399,
+            "fcp": 625,
+            "dom_interactive": 609,
+            "dom_content_loaded": 722,
+            "load": 773
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 38,
+            "dom_interactive": 25,
+            "dom_content_loaded": 116,
+            "load": 126
+          },
+          {
+            "fcp": 34,
+            "dom_interactive": 23,
+            "dom_content_loaded": 109,
+            "load": 119
+          },
+          {
+            "fcp": 53,
+            "dom_interactive": 36,
+            "dom_content_loaded": 115,
+            "load": 125
+          },
+          {
+            "fcp": 42,
+            "dom_interactive": 23,
+            "dom_content_loaded": 111,
+            "load": 122
+          },
+          {
+            "fcp": 41,
+            "dom_interactive": 22,
+            "dom_content_loaded": 111,
+            "load": 121
+          }
+        ]
+      }
+    },
+    "JS_off": {
+      "https://youtube.com/": {
+        "cold": [
+          {
+            "browser_start_time": 393,
+            "fcp": 1962,
+            "dom_interactive": 1773,
+            "dom_content_loaded": 1776,
+            "load": 2414
+          },
+          {
+            "browser_start_time": 387,
+            "fcp": 983,
+            "dom_interactive": 793,
+            "dom_content_loaded": 795,
+            "load": 1390
+          },
+          {
+            "browser_start_time": 397,
+            "fcp": 936,
+            "dom_interactive": 847,
+            "dom_content_loaded": 849,
+            "load": 1490
+          },
+          {
+            "browser_start_time": 409,
+            "fcp": 1018,
+            "dom_interactive": 807,
+            "dom_content_loaded": 809,
+            "load": 1587
+          },
+          {
+            "browser_start_time": 380,
+            "fcp": 1060,
+            "dom_interactive": 804,
+            "dom_content_loaded": 808,
+            "load": 1480
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 379,
+            "dom_interactive": 351,
+            "dom_content_loaded": 355,
+            "load": 380
+          },
+          {
+            "fcp": 329,
+            "dom_interactive": 278,
+            "dom_content_loaded": 281,
+            "load": 326
+          },
+          {
+            "fcp": 351,
+            "dom_interactive": 317,
+            "dom_content_loaded": 322,
+            "load": 348
+          },
+          {
+            "fcp": 347,
+            "dom_interactive": 309,
+            "dom_content_loaded": 313,
+            "load": 346
+          },
+          {
+            "fcp": null,
+            "dom_interactive": 261,
+            "dom_content_loaded": 272,
+            "load": 346
+          }
+        ]
+      },
+      "https://github.com/": {
+        "cold": [
+          {
+            "browser_start_time": 393,
+            "fcp": 657,
+            "dom_interactive": 396,
+            "dom_content_loaded": 400,
+            "load": 1021
+          },
+          {
+            "browser_start_time": 387,
+            "fcp": 781,
+            "dom_interactive": 440,
+            "dom_content_loaded": 443,
+            "load": 1005
+          },
+          {
+            "browser_start_time": 397,
+            "fcp": 654,
+            "dom_interactive": 403,
+            "dom_content_loaded": 407,
+            "load": 1100
+          },
+          {
+            "browser_start_time": 409,
+            "fcp": 737,
+            "dom_interactive": 386,
+            "dom_content_loaded": 389,
+            "load": 888
+          },
+          {
+            "browser_start_time": 380,
+            "fcp": 670,
+            "dom_interactive": 405,
+            "dom_content_loaded": 409,
+            "load": 1107
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 297,
+            "dom_interactive": 236,
+            "dom_content_loaded": 262,
+            "load": 344
+          },
+          {
+            "fcp": 293,
+            "dom_interactive": 234,
+            "dom_content_loaded": 257,
+            "load": 334
+          },
+          {
+            "fcp": 239,
+            "dom_interactive": 176,
+            "dom_content_loaded": 199,
+            "load": 283
+          },
+          {
+            "fcp": 291,
+            "dom_interactive": 230,
+            "dom_content_loaded": 253,
+            "load": 337
+          },
+          {
+            "fcp": 310,
+            "dom_interactive": 251,
+            "dom_content_loaded": 273,
+            "load": 355
+          }
+        ]
+      },
+      "https://stackoverflow.com/": {
+        "cold": [
+          {
+            "browser_start_time": 393,
+            "fcp": 747,
+            "dom_interactive": 432,
+            "dom_content_loaded": 433,
+            "load": 939
+          },
+          {
+            "browser_start_time": 387,
+            "fcp": 733,
+            "dom_interactive": 426,
+            "dom_content_loaded": 426,
+            "load": 958
+          },
+          {
+            "browser_start_time": 397,
+            "fcp": 732,
+            "dom_interactive": 423,
+            "dom_content_loaded": 424,
+            "load": 918
+          },
+          {
+            "browser_start_time": 409,
+            "fcp": 806,
+            "dom_interactive": 519,
+            "dom_content_loaded": 520,
+            "load": 1007
+          },
+          {
+            "browser_start_time": 380,
+            "fcp": 717,
+            "dom_interactive": 407,
+            "dom_content_loaded": 408,
+            "load": 929
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 340,
+            "dom_interactive": 281,
+            "dom_content_loaded": 339,
+            "load": 397
+          },
+          {
+            "fcp": 278,
+            "dom_interactive": 221,
+            "dom_content_loaded": 242,
+            "load": 359
+          },
+          {
+            "fcp": 296,
+            "dom_interactive": 233,
+            "dom_content_loaded": 257,
+            "load": 410
+          },
+          {
+            "fcp": 291,
+            "dom_interactive": 231,
+            "dom_content_loaded": 256,
+            "load": 375
+          },
+          {
+            "fcp": 311,
+            "dom_interactive": 240,
+            "dom_content_loaded": 263,
+            "load": 343
+          }
+        ]
+      },
+      "https://developer.mozilla.org/": {
+        "cold": [
+          {
+            "browser_start_time": 393,
+            "fcp": 470,
+            "dom_interactive": 375,
+            "dom_content_loaded": 377,
+            "load": 585
+          },
+          {
+            "browser_start_time": 387,
+            "fcp": 564,
+            "dom_interactive": 428,
+            "dom_content_loaded": 430,
+            "load": 629
+          },
+          {
+            "browser_start_time": 397,
+            "fcp": 609,
+            "dom_interactive": 413,
+            "dom_content_loaded": 416,
+            "load": 679
+          },
+          {
+            "browser_start_time": 409,
+            "fcp": 626,
+            "dom_interactive": 396,
+            "dom_content_loaded": 399,
+            "load": 679
+          },
+          {
+            "browser_start_time": 380,
+            "fcp": 552,
+            "dom_interactive": 411,
+            "dom_content_loaded": 413,
+            "load": 615
+          }
+        ],
+        "warm": [
+          {
+            "fcp": 138,
+            "dom_interactive": 83,
+            "dom_content_loaded": 90,
+            "load": 158
+          },
+          {
+            "fcp": 134,
+            "dom_interactive": 80,
+            "dom_content_loaded": 90,
+            "load": 156
+          },
+          {
+            "fcp": 129,
+            "dom_interactive": 81,
+            "dom_content_loaded": 89,
+            "load": 149
+          },
+          {
+            "fcp": 130,
+            "dom_interactive": 82,
+            "dom_content_loaded": 90,
+            "load": 151
+          },
+          {
+            "fcp": 129,
+            "dom_interactive": 83,
+            "dom_content_loaded": 91,
+            "load": 162
+          }
+        ]
+      }
+    }
+  }
+}
