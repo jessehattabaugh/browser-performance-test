@@ -115,29 +115,14 @@ const avg = (arr) => (arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length :
 })();
 
 // ----------------------------------------------------------------
-//  create simple HTML file with embedded Chart.js bar charts
-//  showing average First Contentful Paint for each scenario
+//  create enhanced HTML file with embedded Chart.js bar charts
+//  showing all metrics, cumulative stats, and deltas
 // ----------------------------------------------------------------
 function generateHtml(data) {
-	// Flatten to {label: avgFCP} for cold & warm separately
-	const coldLabels = [];
-	const coldData = [];
-	const warmLabels = [];
-	const warmData = [];
-
-	for (const [browser, jsBuckets] of Object.entries(data)) {
-		for (const [jsLabel, sites] of Object.entries(jsBuckets)) {
-			for (const [url, cacheBuckets] of Object.entries(sites)) {
-				const coldFCPs = cacheBuckets.cold.map((r) => r.fcp).filter((v) => v != null);
-				const warmFCPs = cacheBuckets.warm.map((r) => r.fcp).filter((v) => v != null);
-
-				coldLabels.push(`${browser} ${jsLabel} ${url}`);
-				warmLabels.push(`${browser} ${jsLabel} ${url}`);
-				coldData.push(avg(coldFCPs));
-				warmData.push(avg(warmFCPs));
-			}
-		}
-	}
+	// Calculate all metrics data
+	const metricsData = calculateMetricsData(data);
+	const cumulativeStats = calculateCumulativeStats(data);
+	const deltas = calculateDeltas(cumulativeStats);
 
 	// Basic HTML + Chart.js (uses CDN)
 	return /* html */ `
@@ -145,43 +130,370 @@ function generateHtml(data) {
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Firefox vs Chrome – FCP Benchmark</title>
+		<title>Browser Performance Test - Comprehensive Results</title>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 		<style>
 			body{font-family:system-ui,Arial,sans-serif;margin:2rem;background:#f5f7fa;color:#111}
-			canvas{max-width:100%;height:400px;margin-bottom:50px}
+			canvas{max-width:100%;height:400px;margin-bottom:30px}
+			.chart-section{margin-bottom:60px}
+			.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:60px}
+			.stats-table{width:100%;border-collapse:collapse;margin:20px 0}
+			.stats-table th, .stats-table td{padding:10px;text-align:left;border:1px solid #ddd}
+			.stats-table th{background:#f0f0f0;font-weight:600}
+			.positive{color:#28a745}
+			.negative{color:#dc3545}
+			h1{color:#2c3e50;margin-bottom:30px}
+			h2{color:#34495e;margin-top:40px;margin-bottom:20px}
+			h3{color:#7f8c8d;margin-bottom:15px}
 		</style>
 	</head>
 	<body>
-		<h1>First Contentful Paint (average of ${ITERATIONS} runs, ms)</h1>
+		<h1>Browser Performance Test Results (${ITERATIONS} iterations)</h1>
 
-		<h2>Cold Cache</h2>
-		<canvas id="coldChart"></canvas>
+		<div class="chart-section">
+			<h2>All Metrics Comparison - Cold Cache</h2>
+			<canvas id="allMetricsColdChart"></canvas>
+		</div>
 
-		<h2>Warm Cache</h2>
-		<canvas id="warmChart"></canvas>
+		<div class="chart-section">
+			<h2>All Metrics Comparison - Warm Cache</h2>
+			<canvas id="allMetricsWarmChart"></canvas>
+		</div>
+
+		<div class="chart-section">
+			<h2>Browser Overall Performance Comparison</h2>
+			<canvas id="browserComparisonChart"></canvas>
+		</div>
+
+		<div class="chart-section">
+			<h2>JavaScript Impact Analysis</h2>
+			<canvas id="jsImpactChart"></canvas>
+		</div>
+
+		<div class="chart-section">
+			<h2>Cache Performance Impact</h2>
+			<canvas id="cacheImpactChart"></canvas>
+		</div>
+
+		<div class="chart-section">
+			<h2>Performance Deltas</h2>
+			<table class="stats-table">
+				<thead>
+					<tr>
+						<th>Comparison</th>
+						<th>Chrome FCP Delta (ms)</th>
+						<th>Firefox FCP Delta (ms)</th>
+						<th>Chrome Load Delta (ms)</th>
+						<th>Firefox Load Delta (ms)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>JS Off vs JS On</td>
+						<td class="${deltas.jsOff.Chrome.fcp < 0 ? 'positive' : 'negative'}">${deltas.jsOff.Chrome.fcp.toFixed(0)}</td>
+						<td class="${deltas.jsOff.Firefox.fcp < 0 ? 'positive' : 'negative'}">${deltas.jsOff.Firefox.fcp.toFixed(0)}</td>
+						<td class="${deltas.jsOff.Chrome.load < 0 ? 'positive' : 'negative'}">${deltas.jsOff.Chrome.load.toFixed(0)}</td>
+						<td class="${deltas.jsOff.Firefox.load < 0 ? 'positive' : 'negative'}">${deltas.jsOff.Firefox.load.toFixed(0)}</td>
+					</tr>
+					<tr>
+						<td>Warm vs Cold Cache</td>
+						<td class="${deltas.warmCache.Chrome.fcp < 0 ? 'positive' : 'negative'}">${deltas.warmCache.Chrome.fcp.toFixed(0)}</td>
+						<td class="${deltas.warmCache.Firefox.fcp < 0 ? 'positive' : 'negative'}">${deltas.warmCache.Firefox.fcp.toFixed(0)}</td>
+						<td class="${deltas.warmCache.Chrome.load < 0 ? 'positive' : 'negative'}">${deltas.warmCache.Chrome.load.toFixed(0)}</td>
+						<td class="${deltas.warmCache.Firefox.load < 0 ? 'positive' : 'negative'}">${deltas.warmCache.Firefox.load.toFixed(0)}</td>
+					</tr>
+					<tr>
+						<td>Firefox vs Chrome</td>
+						<td class="${deltas.firefoxVsChrome.fcp < 0 ? 'positive' : 'negative'}">${deltas.firefoxVsChrome.fcp.toFixed(0)}</td>
+						<td>-</td>
+						<td class="${deltas.firefoxVsChrome.load < 0 ? 'positive' : 'negative'}">${deltas.firefoxVsChrome.load.toFixed(0)}</td>
+						<td>-</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
 		<script>
-			const coldCtx = document.getElementById('coldChart').getContext('2d');
-			const warmCtx = document.getElementById('warmChart').getContext('2d');
-			new Chart(coldCtx, {
-				type: 'bar',
-				data: {
-					labels: ${JSON.stringify(coldLabels)},
-					datasets: [{label: 'FCP (ms)', data: ${JSON.stringify(coldData)}}]
-				},
-				options: {responsive:true, indexAxis:'y', scales:{x:{beginAtZero:true}}}
-			});
-			new Chart(warmCtx, {
-				type: 'bar',
-				data: {
-					labels: ${JSON.stringify(warmLabels)},
-					datasets: [{label: 'FCP (ms)', data: ${JSON.stringify(warmData)}}]
-				},
-				options: {responsive:true, indexAxis:'y', scales:{x:{beginAtZero:true}}}
-			});
+			// All metrics data
+			const metricsData = ${JSON.stringify(metricsData)};
+			const cumulativeStats = ${JSON.stringify(cumulativeStats)};
+
+			// Color scheme for different metrics
+			const colors = {
+				browser_start_time: '#e74c3c',
+				fcp: '#3498db',
+				dom_interactive: '#f39c12',
+				dom_content_loaded: '#2ecc71',
+				load: '#9b59b6'
+			};
+
+			// Create all metrics charts
+			createAllMetricsChart('allMetricsColdChart', metricsData.cold, 'Cold Cache - All Metrics');
+			createAllMetricsChart('allMetricsWarmChart', metricsData.warm, 'Warm Cache - All Metrics');
+			createBrowserComparisonChart();
+			createJSImpactChart();
+			createCacheImpactChart();
+
+			function createAllMetricsChart(canvasId, data, title) {
+				const ctx = document.getElementById(canvasId).getContext('2d');
+				const datasets = Object.keys(colors).map(metric => ({
+					label: metric.replace(/_/g, ' ').toUpperCase(),
+					data: data.map(item => item[metric]),
+					backgroundColor: colors[metric],
+					borderColor: colors[metric],
+					borderWidth: 1
+				}));
+
+				new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: data.map(item => item.label),
+						datasets: datasets
+					},
+					options: {
+						responsive: true,
+						indexAxis: 'y',
+						scales: {
+							x: { beginAtZero: true, title: { display: true, text: 'Time (ms)' } }
+						},
+						plugins: {
+							title: { display: true, text: title }
+						}
+					}
+				});
+			}
+
+			function createBrowserComparisonChart() {
+				const ctx = document.getElementById('browserComparisonChart').getContext('2d');
+				new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ['Chrome Overall', 'Firefox Overall'],
+						datasets: [
+							{
+								label: 'Average FCP (ms)',
+								data: [cumulativeStats.Chrome.overall.fcp, cumulativeStats.Firefox.overall.fcp],
+								backgroundColor: '#3498db'
+							},
+							{
+								label: 'Average Load Time (ms)',
+								data: [cumulativeStats.Chrome.overall.load, cumulativeStats.Firefox.overall.load],
+								backgroundColor: '#9b59b6'
+							}
+						]
+					},
+					options: {
+						responsive: true,
+						scales: { y: { beginAtZero: true } }
+					}
+				});
+			}
+
+			function createJSImpactChart() {
+				const ctx = document.getElementById('jsImpactChart').getContext('2d');
+				new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ['Chrome JS On', 'Chrome JS Off', 'Firefox JS On', 'Firefox JS Off'],
+						datasets: [
+							{
+								label: 'Average FCP (ms)',
+								data: [
+									cumulativeStats.Chrome.jsOn.fcp,
+									cumulativeStats.Chrome.jsOff.fcp,
+									cumulativeStats.Firefox.jsOn.fcp,
+									cumulativeStats.Firefox.jsOff.fcp
+								],
+								backgroundColor: '#3498db'
+							},
+							{
+								label: 'Average Load Time (ms)',
+								data: [
+									cumulativeStats.Chrome.jsOn.load,
+									cumulativeStats.Chrome.jsOff.load,
+									cumulativeStats.Firefox.jsOn.load,
+									cumulativeStats.Firefox.jsOff.load
+								],
+								backgroundColor: '#9b59b6'
+							}
+						]
+					},
+					options: {
+						responsive: true,
+						scales: { y: { beginAtZero: true } }
+					}
+				});
+			}
+
+			function createCacheImpactChart() {
+				const ctx = document.getElementById('cacheImpactChart').getContext('2d');
+				new Chart(ctx, {
+					type: 'bar',
+					data: {
+						labels: ['Chrome Cold', 'Chrome Warm', 'Firefox Cold', 'Firefox Warm'],
+						datasets: [
+							{
+								label: 'Average FCP (ms)',
+								data: [
+									cumulativeStats.Chrome.cold.fcp,
+									cumulativeStats.Chrome.warm.fcp,
+									cumulativeStats.Firefox.cold.fcp,
+									cumulativeStats.Firefox.warm.fcp
+								],
+								backgroundColor: '#3498db'
+							},
+							{
+								label: 'Average Load Time (ms)',
+								data: [
+									cumulativeStats.Chrome.cold.load,
+									cumulativeStats.Chrome.warm.load,
+									cumulativeStats.Firefox.cold.load,
+									cumulativeStats.Firefox.warm.load
+								],
+								backgroundColor: '#9b59b6'
+							}
+						]
+					},
+					options: {
+						responsive: true,
+						scales: { y: { beginAtZero: true } }
+					}
+				});
+			}
 		</script>
 	</body>
 </html>
 `;
+}
+
+// Helper function to calculate metrics data for charts
+function calculateMetricsData(data) {
+	const coldData = [];
+	const warmData = [];
+
+	for (const [browser, jsBuckets] of Object.entries(data)) {
+		for (const [jsLabel, sites] of Object.entries(jsBuckets)) {
+			for (const [url, cacheBuckets] of Object.entries(sites)) {
+				const label = `${browser} ${jsLabel} ${url.replace('https://', '').replace('/', '')}`;
+				
+				// Cold cache data
+				const coldMetrics = {
+					label: label,
+					browser_start_time: avg(cacheBuckets.cold.map(r => r.browser_start_time).filter(v => v != null)),
+					fcp: avg(cacheBuckets.cold.map(r => r.fcp).filter(v => v != null)),
+					dom_interactive: avg(cacheBuckets.cold.map(r => r.dom_interactive).filter(v => v != null)),
+					dom_content_loaded: avg(cacheBuckets.cold.map(r => r.dom_content_loaded).filter(v => v != null)),
+					load: avg(cacheBuckets.cold.map(r => r.load).filter(v => v != null))
+				};
+				coldData.push(coldMetrics);
+
+				// Warm cache data (no browser_start_time)
+				const warmMetrics = {
+					label: label,
+					browser_start_time: null,
+					fcp: avg(cacheBuckets.warm.map(r => r.fcp).filter(v => v != null)),
+					dom_interactive: avg(cacheBuckets.warm.map(r => r.dom_interactive).filter(v => v != null)),
+					dom_content_loaded: avg(cacheBuckets.warm.map(r => r.dom_content_loaded).filter(v => v != null)),
+					load: avg(cacheBuckets.warm.map(r => r.load).filter(v => v != null))
+				};
+				warmData.push(warmMetrics);
+			}
+		}
+	}
+
+	return { cold: coldData, warm: warmData };
+}
+
+// Helper function to calculate cumulative statistics
+function calculateCumulativeStats(data) {
+	const stats = {};
+
+	for (const [browser, jsBuckets] of Object.entries(data)) {
+		stats[browser] = {
+			overall: { fcp: 0, load: 0 },
+			jsOn: { fcp: 0, load: 0 },
+			jsOff: { fcp: 0, load: 0 },
+			cold: { fcp: 0, load: 0 },
+			warm: { fcp: 0, load: 0 }
+		};
+
+		const allFcps = [];
+		const allLoads = [];
+		const jsOnFcps = [];
+		const jsOnLoads = [];
+		const jsOffFcps = [];
+		const jsOffLoads = [];
+		const coldFcps = [];
+		const coldLoads = [];
+		const warmFcps = [];
+		const warmLoads = [];
+
+		for (const [jsLabel, sites] of Object.entries(jsBuckets)) {
+			for (const [url, cacheBuckets] of Object.entries(sites)) {
+				// Collect all data points
+				const coldFcpVals = cacheBuckets.cold.map(r => r.fcp).filter(v => v != null);
+				const coldLoadVals = cacheBuckets.cold.map(r => r.load).filter(v => v != null);
+				const warmFcpVals = cacheBuckets.warm.map(r => r.fcp).filter(v => v != null);
+				const warmLoadVals = cacheBuckets.warm.map(r => r.load).filter(v => v != null);
+
+				allFcps.push(...coldFcpVals, ...warmFcpVals);
+				allLoads.push(...coldLoadVals, ...warmLoadVals);
+				coldFcps.push(...coldFcpVals);
+				coldLoads.push(...coldLoadVals);
+				warmFcps.push(...warmFcpVals);
+				warmLoads.push(...warmLoadVals);
+
+				if (jsLabel === 'JS_on') {
+					jsOnFcps.push(...coldFcpVals, ...warmFcpVals);
+					jsOnLoads.push(...coldLoadVals, ...warmLoadVals);
+				} else {
+					jsOffFcps.push(...coldFcpVals, ...warmFcpVals);
+					jsOffLoads.push(...coldLoadVals, ...warmLoadVals);
+				}
+			}
+		}
+
+		stats[browser].overall.fcp = avg(allFcps);
+		stats[browser].overall.load = avg(allLoads);
+		stats[browser].jsOn.fcp = avg(jsOnFcps);
+		stats[browser].jsOn.load = avg(jsOnLoads);
+		stats[browser].jsOff.fcp = avg(jsOffFcps);
+		stats[browser].jsOff.load = avg(jsOffLoads);
+		stats[browser].cold.fcp = avg(coldFcps);
+		stats[browser].cold.load = avg(coldLoads);
+		stats[browser].warm.fcp = avg(warmFcps);
+		stats[browser].warm.load = avg(warmLoads);
+	}
+
+	return stats;
+}
+
+// Helper function to calculate deltas
+function calculateDeltas(stats) {
+	return {
+		jsOff: {
+			Chrome: {
+				fcp: stats.Chrome.jsOff.fcp - stats.Chrome.jsOn.fcp,
+				load: stats.Chrome.jsOff.load - stats.Chrome.jsOn.load
+			},
+			Firefox: {
+				fcp: stats.Firefox.jsOff.fcp - stats.Firefox.jsOn.fcp,
+				load: stats.Firefox.jsOff.load - stats.Firefox.jsOn.load
+			}
+		},
+		warmCache: {
+			Chrome: {
+				fcp: stats.Chrome.warm.fcp - stats.Chrome.cold.fcp,
+				load: stats.Chrome.warm.load - stats.Chrome.cold.load
+			},
+			Firefox: {
+				fcp: stats.Firefox.warm.fcp - stats.Firefox.cold.fcp,
+				load: stats.Firefox.warm.load - stats.Firefox.cold.load
+			}
+		},
+		firefoxVsChrome: {
+			fcp: stats.Firefox.overall.fcp - stats.Chrome.overall.fcp,
+			load: stats.Firefox.overall.load - stats.Chrome.overall.load
+		}
+	};
 }

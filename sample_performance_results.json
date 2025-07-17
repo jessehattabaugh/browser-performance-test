@@ -347,6 +347,26 @@
             "dom_content_loaded": 1220,
             "load": 1380
           }
+        ],
+        "warm": [
+          {
+            "fcp": 520,
+            "dom_interactive": 450,
+            "dom_content_loaded": 490,
+            "load": 600
+          },
+          {
+            "fcp": 550,
+            "dom_interactive": 480,
+            "dom_content_loaded": 520,
+            "load": 630
+          },
+          {
+            "fcp": 500,
+            "dom_interactive": 430,
+            "dom_content_loaded": 470,
+            "load": 580
+          }
         ]
       }
     }
