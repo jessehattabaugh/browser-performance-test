@@ -127,3 +127,29 @@ Add additional metrics (e.g. Largest Contentful Paint, Total Blocking Time) 
 ## License
 
 MIT — do whatever you want, but performance results may vary. ✌️
+
+---
+
+## Enhanced Dashboard Features
+
+The results dashboard now includes:
+
+1. **All Metrics Visualization**: 
+   - Browser Start Time (cold loads only)
+   - First Contentful Paint (FCP)
+   - DOM Interactive
+   - DOM Content Loaded
+   - Load Event End
+
+2. **Comprehensive Comparisons**:
+   - Browser Overall Performance (Chrome vs Firefox)
+   - JavaScript Impact Analysis (JS On vs JS Off)
+   - Cache Performance Impact (Cold vs Warm)
+
+3. **Performance Deltas Table**: Shows exact differences between configurations:
+   - JS Off vs JS On performance impact
+   - Warm vs Cold cache performance boost
+   - Firefox vs Chrome overall comparison
+   - Color-coded values (green = improvement, red = degradation)
+
+4. **Visual Analytics**: Multiple interactive charts showing different perspectives of the same data for comprehensive analysis.
